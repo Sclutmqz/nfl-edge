@@ -1,0 +1,61 @@
+name: NFL EDGE - Actualizar datos y publicar
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # GitHub cron se expresa en UTC. 16:20 UTC equivale a
+    # 10:20 Monterrey (UTC-6) todo el año.
+    - cron: '20 16 * * 2,4'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'nfl-edge-publicacion'
+  cancel-in-progress: false
+
+jobs:
+  actualizar-y-publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Descargar y verificar NFLverse
+        run: python scripts/actualizar.py
+
+      - name: Guardar estadísticas y pronósticos archivados
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Datos NFL EDGE: actualización verificada'
+            git push
+          fi
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empaquetar sitio
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: '.'
+
+      - name: Publicar sitio
+        id: deployment
+        uses: actions/deploy-pages@v4
