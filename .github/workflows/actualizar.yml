@@ -1,0 +1,63 @@
+
+name: Actualizar NFL EDGE
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "15 15 * * 2,4"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: nfl-edge-pages
+  cancel-in-progress: false
+
+jobs:
+  actualizar-y-publicar:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Descargar proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install pandas pyarrow
+
+      - name: Actualizar estadísticas NFL
+        run: python scripts/actualizar.py
+
+      - name: Guardar cortes históricos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar estadísticas NFL"
+            git push
+          fi
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Preparar publicación
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: "."
+
+      - name: Publicar NFL EDGE
+        id: deployment
+        uses: actions/deploy-pages@v4
