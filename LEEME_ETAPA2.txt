@@ -1,0 +1,94 @@
+NFL EDGE V9 — ETAPA 2 · INSTALACIÓN CON PASOS EXACTOS
+=======================================================
+
+REQUISITOS
+- Ya tienes tu repositorio público 'nfl-edge' y su GitHub Pages de la Etapa 1.
+- No necesitas Apps Script, Google Sheets, Python ni Node instalados en tu PC.
+- Descarga el ZIP y EXTRAÉLO. NO SUBAS EL ZIP TAL CUAL a GitHub.
+
+PASO 1 — CAMBIAR LA FORMA DE PUBLICACIÓN (SOLO AHORA)
+1. Entra a github.com/TU-USUARIO/nfl-edge
+2. Abre Settings → Pages.
+3. En Build and deployment → Source, cambia 'Deploy from a branch'
+   por 'GitHub Actions'.
+4. No selecciones ninguna plantilla ni crees un workflow automático.
+   Esta carpeta ya contiene el nuestro.
+
+Por qué cambió Source: en la Etapa 1 bastaba publicar HTML desde main.
+En la Etapa 2 necesitamos que un mismo proceso actualice y publique.
+GitHub advierte que commits hechos con GITHUB_TOKEN no vuelven a activar
+la publicación normal 'Deploy from a branch'. GitHub Actions sí permite
+publicar directamente el contenido generado en el mismo proceso.
+
+PASO 2 — PERMISOS
+1. Entra a Settings → Actions → General.
+2. Baja hasta 'Workflow permissions'.
+3. Si está disponible, marca 'Read and write permissions' → Save.
+   El workflow limita sus permisos de forma explícita.
+
+PASO 3 — SUBIR LOS ARCHIVOS AL REPOSITORIO
+1. En GitHub pulsa la pestaña Code.
+2. Pulsa Add file → Upload files.
+3. En tu PC abre la carpeta DESCOMPRIMIDA del ZIP.
+4. Arrastra al recuadro de GitHub los elementos DENTRO de esa carpeta:
+   index.html, .nojekyll, scripts, .github y LEEME_ETAPA2.txt.
+5. Verifica que GitHub muestre las rutas:
+   index.html
+   scripts/actualizar.py
+   .github/workflows/actualizar.yml
+6. En Commit message escribe 'NFL EDGE V9 - actualización automática'.
+7. Selecciona 'Commit directly to the main branch' → Commit changes.
+
+Si GitHub no permite incluir la carpeta oculta .github al arrastrarla,
+crea el workflow por separado en GitHub:
+  Add file → Create new file
+  Nombre del archivo: .github/workflows/actualizar.yml
+  Contenido: copia y pega el archivo del ZIP con el mismo nombre.
+  Commit changes (rama main).
+
+PASO 4 — INICIAR LA PRIMERA ACTUALIZACIÓN
+1. Entra en la pestaña Actions.
+2. Selecciona 'NFL EDGE - Actualizar datos y publicar'.
+3. Haz clic en Run workflow (a la derecha) → rama main → Run workflow.
+   Es posible que ya se haya lanzado al subir el código (evento push).
+4. Abre la ejecución y mira el paso 'Descargar y verificar NFLverse'.
+5. Si todo termina verde, abre Settings → Pages → Visit site.
+6. NFL EDGE mostrará 'SINCRONIZADO · W#' en la barra lateral, y un
+   aviso con el corte de datos de la última jornada confirmada.
+
+SI APARECE UN ERROR
+- 'ERROR INICIAL': la fuente nflverse aún no tiene los resultados o
+  el EPA de al menos una semana. NO se inventan datos: vuelve a Actions →
+  Run workflow cuando NFLverse publique la semana que falta.
+- 'Calendario distinto al HTML': GitHub publicó otra programación NFL; no
+  se publican resultados cruzados erróneamente. Comparar emparejamientos.
+- 'Permission denied' en git push: verifica Settings → Actions → General
+  y los permisos de la rama main.
+- 'Resource not accessible by integration': revisar permiso Pages/Actions.
+- Si 'SIN SINCRONIZAR': revisa el paso 'Descargar y verificar NFLverse'
+  y verifica si existe el archivo data/actual.json en la rama main.
+
+PASO 5 — RESPALDA TUS VALIDACIONES
+Dentro de NFL EDGE entra a Validación → Exportar respaldo.
+Se descarga un .json con tus notas, verificaciones y resultados manuales.
+En otra computadora usa Validación → Importar respaldo.
+Los resultados públicos NO incluyen tus notas personales.
+Los datos V8 guardados en el mismo dominio pueden seguir en localStorage,
+pero los guardados usando file:// no migran automáticamente a GitHub Pages.
+
+ACTUALIZACIONES
+- Martes y jueves a las 10:20 de la mañana en Monterrey (cron UTC).
+- GitHub Actions puede ejecutarse más tarde de la hora prevista.
+- Se recalculan estadísticas solo hasta la última semana con resultados
+  completos y jugadas (EPA) disponibles; no se fuerzan semanas parciales.
+- El pronóstico siguiente se congela antes del primer kickoff cuando hay
+  fecha y hora de inicio confiables.
+- No se inventan pronósticos antiguos; semanas sin snapshot no se evalúan.
+
+FUENTES
+- https://github.com/nflverse/nflverse-data/releases/tag/schedules
+- https://github.com/nflverse/nflverse-data/releases/tag/pbp
+
+AVISO: Motor heurístico experimental sin calibración histórica. Lesiones,
+QB y clima requieren verificación manual. El H2H permanece limitado a los
+emparejamientos incluidos en la V8 y no se sincroniza automáticamente.
