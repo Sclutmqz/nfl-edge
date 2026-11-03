@@ -4,10 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    # GitHub cron se expresa en UTC. 16:20 UTC equivale a
-    # 10:20 Monterrey (UTC-6) todo el año.
-    - cron: '20 16 * * 2,4'
+    schedule:
+    - cron: '37 16 * * *'
 
 permissions:
   contents: write
