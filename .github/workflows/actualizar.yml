@@ -2,9 +2,10 @@ name: NFL EDGE - Actualizar datos y publicar
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
-    schedule:
+    branches:
+      - main
+  workflow_dispatch: {}
+  schedule:
     - cron: '37 16 * * *'
 
 permissions:
