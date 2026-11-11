@@ -1,0 +1,402 @@
+{
+  "created_at_utc": "2026-11-11T22:09:25+00:00",
+  "data_through_week": 9,
+  "games": {
+    "w10-0": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": 0.227211
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": 0.2155
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": 0.07
+        },
+        {
+          "name": "Local / visitante",
+          "v": 0.125873
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 68,
+      "losing": "WAS",
+      "p": 0.6788701,
+      "winning": "NYG"
+    },
+    "w10-1": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": 0.064236
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": 0.049
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": 0.0515278
+        },
+        {
+          "name": "Local / visitante",
+          "v": 0.0288889
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 58,
+      "losing": "NE",
+      "p": 0.5753352,
+      "winning": "DET"
+    },
+    "w10-10": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": -0.4309695
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": -0.222
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": -0.1088889
+        },
+        {
+          "name": "Local / visitante",
+          "v": -0.191188
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 70,
+      "losing": "LV",
+      "p": 0.3008936,
+      "winning": "SEA"
+    },
+    "w10-11": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": -0.654762
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": -0.3265
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": -0.1226944
+        },
+        {
+          "name": "Local / visitante",
+          "v": -0.1254603
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 75,
+      "losing": "DAL",
+      "p": 0.2461195,
+      "winning": "SF"
+    },
+    "w10-12": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": 0.2370425
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": -0.056
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": 0.05075
+        },
+        {
+          "name": "Local / visitante",
+          "v": -0.0222857
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 58,
+      "losing": "PIT",
+      "p": 0.579204,
+      "winning": "CIN"
+    },
+    "w10-13": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": 0.572612
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": 0.23
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": 0.0983889
+        },
+        {
+          "name": "Local / visitante",
+          "v": -0.0243275
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 73,
+      "losing": "LAC",
+      "p": 0.7284304,
+      "winning": "BAL"
+    },
+    "w10-2": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": -0.4938275
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": -0.5255
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": -0.1845278
+        },
+        {
+          "name": "Local / visitante",
+          "v": -0.2250292
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 79,
+      "losing": "NYJ",
+      "p": 0.2110039,
+      "winning": "BUF"
+    },
+    "w10-3": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": -0.260654
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": -0.028
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": -0.01925
+        },
+        {
+          "name": "Local / visitante",
+          "v": -0.045614
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 56,
+      "losing": "NO",
+      "p": 0.4394196,
+      "winning": "CAR"
+    },
+    "w10-4": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": -0.319272
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": 0.0125
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": -0.0841944
+        },
+        {
+          "name": "Local / visitante",
+          "v": -0.0499365
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 58,
+      "losing": "CLE",
+      "p": 0.4180209,
+      "winning": "HOU"
+    },
+    "w10-5": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": -1.147503
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": -0.5225
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": -0.28525
+        },
+        {
+          "name": "Local / visitante",
+          "v": -0.2645614
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 89,
+      "losing": "TEN",
+      "p": 0.1081466,
+      "winning": "JAX"
+    },
+    "w10-6": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": -0.7234765
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": -0.227
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": -0.1576944
+        },
+        {
+          "name": "Local / visitante",
+          "v": 0.0266667
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 73,
+      "losing": "ATL",
+      "p": 0.2745808,
+      "winning": "KC"
+    },
+    "w10-7": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": -0.0533445
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": 0.0735
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": 0.0283889
+        },
+        {
+          "name": "Local / visitante",
+          "v": 0.1011111
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 56,
+      "losing": "MIA",
+      "p": 0.5645516,
+      "winning": "IND"
+    },
+    "w10-8": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": 0.334536
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": -0.044
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": -0.0136111
+        },
+        {
+          "name": "Local / visitante",
+          "v": 0.0174854
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 60,
+      "losing": "MIN",
+      "p": 0.5997468,
+      "winning": "GB"
+    },
+    "w10-9": {
+      "components": [
+        {
+          "name": "EPA neto (eficiencia)",
+          "v": -0.691279
+        },
+        {
+          "name": "Balance general 2025–26",
+          "v": -0.262
+        },
+        {
+          "name": "Diferencia de puntos / juego",
+          "v": -0.1711111
+        },
+        {
+          "name": "Local / visitante",
+          "v": -0.2201914
+        },
+        {
+          "name": "Ventaja de sede base",
+          "v": 0.11
+        }
+      ],
+      "edge": 77,
+      "losing": "ARI",
+      "p": 0.2253806,
+      "winning": "LAR"
+    }
+  },
+  "model_version": "v8-heuristica-1",
+  "schema": 1,
+  "season": 2026,
+  "week": 10
+}
